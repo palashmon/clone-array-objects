@@ -1,0 +1,37 @@
+{
+	"name": "clone-array-objects",
+	"version": "0.0.0",
+	"description": "Clone an array of objects",
+	"license": "MIT",
+	"repository": "https://github.com/palashmon/clone-array-objects",
+	"author": {
+		"name": "Palash Mondal",
+		"email": "palashm@live.in",
+		"url": "https://github.com/palashmon"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava",
+		"lint": "xo --fix",
+		"cover": "nyc --reporter=lcov ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"clone",
+		"array",
+		"objects",
+		"multiple",
+		"array item",
+		"keys",
+		"test"
+	],
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"nyc": "^12.0.2",
+		"xo": "^0.21.1"
+	}
+}
