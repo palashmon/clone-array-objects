@@ -1,6 +1,6 @@
 {
 	"name": "clone-array-objects",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Clone an array of objects",
 	"license": "MIT",
 	"repository": "https://github.com/palashmon/clone-array-objects",
