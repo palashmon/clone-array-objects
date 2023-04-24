@@ -1,6 +1,6 @@
 {
 	"name": "clone-array-objects",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Clone an array of objects",
 	"license": "MIT",
 	"repository": "https://github.com/palashmon/clone-array-objects",
@@ -10,7 +10,7 @@
 		"url": "https://github.com/palashmon"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=14"
 	},
 	"scripts": {
 		"test": "xo && ava",
@@ -30,8 +30,9 @@
 		"test"
 	],
 	"devDependencies": {
-		"ava": "^3.0.0",
+		"ava": "^5.1.0",
 		"nyc": "^15.0.0",
-		"xo": "^0.30.0"
-	}
+		"xo": "^0.54.0"
+	},
+	"type": "module"
 }

@@ -1,24 +1,44 @@
 import test from 'ava';
-import cloneArrayObjects from '.';
+import cloneArrayObjects from './index.js';
 
-test('Return typeerror when arrayInput is not an array.', t => {
-	const err = t.throws(() => {
-		cloneArrayObjects(23);
-	}, TypeError);
-	t.is(err.message, 'Expected an array, got number');
+test('should return a new array with cloned objects', t => {
+	const input = [
+		{name: 'John', age: 30},
+		{name: 'Jane', age: 25},
+	];
+	const output = cloneArrayObjects(input);
+
+	t.not(output, input); // Should not modify the original array
+	t.deepEqual(output, input); // Should have the same values as the input
 });
 
-test('Return empty array when no valid input passed.', t => {
-	t.deepEqual(cloneArrayObjects(), []);
-	t.deepEqual(cloneArrayObjects([]), []);
+test('should throw a TypeError if the input is not an array', t => {
+	const input = 'not an array';
+
+	const error = t.throws(() => cloneArrayObjects(input));
+
+	t.is(error.message, `Expected an array, got ${typeof input}`);
 });
 
-test('Test clone', t => {
-	const actual = [{a: 1}, {b: 2}];
-	const expected = [{a: 1}, {b: 2}];
-	const modified = [{a: 1}, {b: 3}];
-	t.deepEqual(cloneArrayObjects(actual), expected);
-	expected[1].b = 3;
-	t.notDeepEqual(cloneArrayObjects(actual), expected);
-	t.deepEqual(modified, expected);
+test('should throw a TypeError if any object in the array is null', t => {
+	const input = [{name: 'John', age: 30}, null];
+
+	const error = t.throws(() => cloneArrayObjects(input));
+
+	t.is(error.message, 'Expected an object, got object');
+});
+
+test('should throw a TypeError if any object in the array is not an object', t => {
+	const input = [{name: 'John', age: 30}, 'not an object'];
+
+	const error = t.throws(() => cloneArrayObjects(input));
+
+	t.is(error.message, 'Expected an object, got string');
+});
+
+test('should return an empty array if the input is an empty array', t => {
+	const input = [];
+	const output = cloneArrayObjects(input);
+
+	t.deepEqual(output, []);
 });
