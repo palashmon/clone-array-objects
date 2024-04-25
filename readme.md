@@ -1,4 +1,4 @@
-# clone-array-objects ![CI](https://github.com/palashmon/clone-array-objects/actions/workflows/main.yaml/badge.svg)
+# clone-array-objects ![CI](https://github.com/palashmon/clone-array-objects/actions/workflows/main.yml/badge.svg)
 
 > Tiny module to clone an array of objects
 
